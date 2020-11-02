@@ -1,0 +1,28 @@
+2020-10-29 22:46:09.0439 INFO Users - Login: Login Attempt from user admin
+2020-10-29 22:46:09.1835 WARN Users - Login: Authenticated Failed for user: admin
+2020-10-29 22:46:28.7396 INFO Users - Login: Login Attempt from user admin
+2020-10-29 22:46:39.2938 WARN Users - Login: Authenticated Failed for user: admin
+2020-10-29 22:47:25.5613 INFO Users - Login: Login Attempt from user admin
+2020-10-29 22:47:52.5610 WARN Users - Login: Authenticated Failed for user: admin
+2020-10-29 22:48:51.6352 INFO Users - Login: Login Attempt from user admin
+2020-10-29 22:49:12.9087 WARN Users - Login: Authenticated Failed for user: admin
+2020-10-29 22:50:33.0470 INFO Users - Login: Login Attempt from user admin
+2020-10-29 22:50:46.7834 WARN Users - Login: Authenticated Failed for user: admin
+2020-10-29 22:57:21.3739 INFO Authors - GetAuthors: Attempting call.
+2020-10-29 22:57:21.5326 INFO Authors - GetAuthors: Call Successful
+2020-10-29 22:58:35.9579 INFO Users - Login: Login Attempt from user customer01
+2020-10-29 23:01:04.3772 WARN Users - Login: Authentication Failed for user: customer01
+2020-10-29 23:02:02.4796 INFO Users - Login: Login Attempt from user customer01
+2020-10-29 23:02:10.8508 WARN Users - Login: Authentication Failed for user: customer01
+2020-10-29 23:03:00.7686 INFO Users - Login: Login Attempt from user customer01
+2020-10-29 23:03:18.8589 WARN Users - Login: Authentication Failed for user: customer01
+2020-10-29 23:06:56.7948 INFO Users - Login: Login Attempt from user customer01
+2020-10-29 23:07:01.8174 WARN Users - Login: Authentication Failed for user: customer01
+2020-10-29 23:07:11.0115 INFO Users - Login: Login Attempt from user admmin
+2020-10-29 23:07:24.5811 WARN Users - Login: Authentication Failed for user: admmin
+2020-10-29 23:08:00.4748 INFO Users - Login: Login Attempt from user admin
+2020-10-29 23:08:08.1792 WARN Users - Login: Authentication Failed for user: admin
+2020-10-29 23:26:19.6829 INFO Users - Login: Login Attempt from user admmin
+2020-10-29 23:26:28.5829 WARN Users - Login: Authentication Failed for user: admmin
+2020-10-29 23:32:23.8077 INFO Users - Login: Login Attempt from user admin
+2020-10-29 23:32:41.4481 WARN Users - Login: Authentication Failed for user: admin

@@ -1,0 +1,8 @@
+2020-10-19 22:44:34.0984 INFO Accessed Home Controller.
+2020-10-19 22:45:05.7509 INFO Accessed Home Controller.
+2020-10-19 22:45:07.6923 INFO Accessed Home Controller.
+2020-10-19 22:45:11.9299 DEBUG Got a value.
+2020-10-19 22:45:24.9356 INFO Accessed Home Controller.
+2020-10-19 22:45:28.0888 DEBUG Got a value.
+2020-10-19 22:47:22.7151 ERROR This is an error.
+2020-10-19 22:48:53.1545 WARN This is a warning.
