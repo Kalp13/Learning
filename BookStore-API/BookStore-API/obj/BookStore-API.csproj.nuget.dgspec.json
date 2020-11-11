@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VSTS\\repos\\BookStore-API\\BookStore-API\\BookStore-API.csproj": {}
+    "C:\\VSTS\\Learning\\BookStore-API\\BookStore-API\\BookStore-API.csproj": {}
   },
   "projects": {
-    "C:\\VSTS\\repos\\BookStore-API\\BookStore-API\\BookStore-API.csproj": {
+    "C:\\VSTS\\Learning\\BookStore-API\\BookStore-API\\BookStore-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VSTS\\repos\\BookStore-API\\BookStore-API\\BookStore-API.csproj",
+        "projectUniqueName": "C:\\VSTS\\Learning\\BookStore-API\\BookStore-API\\BookStore-API.csproj",
         "projectName": "BookStore-API",
-        "projectPath": "C:\\VSTS\\repos\\BookStore-API\\BookStore-API\\BookStore-API.csproj",
+        "projectPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore-API\\BookStore-API.csproj",
         "packagesPath": "C:\\Users\\Rudolph\\.nuget\\packages\\",
-        "outputPath": "C:\\VSTS\\repos\\BookStore-API\\BookStore-API\\obj\\",
+        "outputPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore-API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

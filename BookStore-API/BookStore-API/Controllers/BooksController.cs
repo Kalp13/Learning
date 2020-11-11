@@ -6,6 +6,7 @@ using AutoMapper;
 using BookStore_API.Contracts;
 using BookStore_API.Data;
 using BookStore_API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,7 @@ namespace BookStore_API.Controllers
     /// Endpoint used to interact with the Books in the book store's database.
     /// </summary>
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public class BooksController : ControllerBase
@@ -102,6 +104,10 @@ namespace BookStore_API.Controllers
         /// </param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Create([FromBody] BookCreateDTO bookDTO)
         {
             try

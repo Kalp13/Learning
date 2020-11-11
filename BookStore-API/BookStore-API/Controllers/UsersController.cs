@@ -70,10 +70,10 @@ namespace BookStore_API.Controllers
                 if (result.Succeeded)
                 {
                     var user = await this.userManager.FindByNameAsync(userDTO.Username).ConfigureAwait(false);
-                    //var tokenString = await this.GenerateJSONWebToken(user);
+                    var tokenString = await this.GenerateJSONWebToken(user);
                     this.loggerService.LogInfo($"{this.GetControllerActionNames()}: Successfully Authenticated {userDTO.Username}");
 
-                    return Ok(/*new { token = tokenString }*/);
+                    return Ok(new { token = tokenString });
                 }
                 else
                 {
@@ -104,37 +104,37 @@ namespace BookStore_API.Controllers
             return StatusCode(StatusCodes.Status500InternalServerError, "Something went wrong. Please contact the Administrator.");
         }
 
-        //private async Task<string> GenerateJSONWebToken(IdentityUser user)
-        //{
-        //    try
-        //    {
-        //        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]));
-        //        var credential = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+        private async Task<string> GenerateJSONWebToken(IdentityUser user)
+        {
+            try
+            {
+                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]));
+                var credential = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-        //        var claims = new List<Claim>
-        //        {
-        //            new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-        //            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        //            new Claim(ClaimTypes.NameIdentifier, user.Id),
-        //        };
+                var claims = new List<Claim>
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                };
 
-        //        var roles = await this.userManager.GetRolesAsync(user);
-        //        claims.AddRange(roles.Select(x => new Claim(ClaimsIdentity.DefaultRoleClaimType, x)));
+                var roles = await this.userManager.GetRolesAsync(user);
+                claims.AddRange(roles.Select(x => new Claim(ClaimsIdentity.DefaultRoleClaimType, x)));
 
-        //        var token = new JwtSecurityToken(this.configuration["JWT:Issuer"],
-        //                                        this.configuration["JWT:Issuer"],
-        //                                        claims,
-        //                                        null,
-        //                                        expires: DateTime.Now.AddMinutes(5),
-        //                                        signingCredentials: credential);
+                var token = new JwtSecurityToken(this.configuration["JWT:Issuer"],
+                                                this.configuration["JWT:Issuer"],
+                                                claims,
+                                                null,
+                                                expires: DateTime.Now.AddMinutes(5),
+                                                signingCredentials: credential);
 
-        //        return new JwtSecurityTokenHandler().WriteToken(token);
-        //    }
-        //    catch (Exception exc)
-        //    {
-        //        throw exc;
-        //    }
-        //}
+                return new JwtSecurityTokenHandler().WriteToken(token);
+            }
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
 
         #endregion
     }
