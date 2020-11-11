@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0ANPv0htFcG1c8XSuhjLoAsCTbtk2bSrGvnSxCt4ZcFzxTxAzuF+1NyDmvfKTqFKvaHs1PJt2fCJmeT4JPciKA==",
+  "success": true,
+  "projectFilePath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\BookStore.Website.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rudolph\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
