@@ -81,6 +81,22 @@ namespace BookStore.WebAPI.Data
                     await userManager.AddToRoleAsync(user, "Customer").ConfigureAwait(false);
                 }
             }
+
+            if (await userManager.FindByEmailAsync("admin02@gmail.com") == null)
+            {
+                var user = new IdentityUser
+                {
+                    UserName = "admin02@gmail.com",
+                    Email = "admin02@gmail.com"
+                };
+
+                var result = await userManager.CreateAsync(user, "Password@1");
+
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(user, "Administrator").ConfigureAwait(false);
+                }
+            }
         }
 
         private static async Task SeedRoles(RoleManager<IdentityRole> roleManager)

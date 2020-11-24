@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BookStore.Website.Data;
+using BookStore.Website.Contracts;
+using BookStore.Website.Services;
+using Blazored.LocalStorage;
+using System.IdentityModel.Tokens.Jwt;
+using BookStore.Website.Providers;
+using Microsoft.AspNetCore.Components.Authorization;
 
 namespace BookStore.Website
 {
@@ -28,7 +27,12 @@ namespace BookStore.Website
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddBlazoredLocalStorage();
+            services.AddHttpClient();
+            services.AddScoped<ApiAuthenticationStateProvider>();
+            services.AddScoped<AuthenticationStateProvider>(p => p.GetRequiredService<ApiAuthenticationStateProvider>());
+            services.AddScoped<JwtSecurityTokenHandler>();
+            services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

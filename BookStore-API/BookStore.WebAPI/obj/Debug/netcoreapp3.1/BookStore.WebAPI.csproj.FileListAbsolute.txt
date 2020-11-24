@@ -87,9 +87,6 @@ C:\VSTS\Learning\BookStore-API\BookStore-API\obj\Debug\netcoreapp3.1\BookStore.W
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\nlog.config
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\appsettings.json
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.json
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.local.json
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.StaticWebAssets.xml
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.exe
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.deps.json
@@ -171,3 +168,4 @@ C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStor
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.pdb
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.genruntimeconfig.cache
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.xml
+C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\BookStore.WebAPI.styles.css

@@ -67,14 +67,18 @@ namespace BookStore.WebAPI.Controllers
                 this.loggerService.LogInfo($"{this.GetControllerActionNames()}: Login Attempt from user {userDTO.EmailAddress}");
 
                 string username = userDTO.EmailAddress;
-                string password = userDTO.Password;
-                var user = new IdentityUser { Email = username, UserName = username };
+                 string password = userDTO.Password;
+                var user = new IdentityUser 
+                { 
+                    Email = username, 
+                    UserName = username 
+                };
 
                 var result = await this.userManager.CreateAsync(user, password);
 
                 if (!result.Succeeded)
                 {
-                    this.loggerService.LogError($"{this.GetControllerActionNames()}: User Registration Failed for user: {userDTO.EmailAddress}");
+                    //this.loggerService.LogError($"{this.GetControllerActionNames()}: User Registration Failed for user: {userDTO.EmailAddress}");
                     foreach (var error in result.Errors)
                     {
                         this.loggerService.LogError($"{this.GetControllerActionNames()}: {error.Code} - {error.Description}");
@@ -83,6 +87,7 @@ namespace BookStore.WebAPI.Controllers
                 }
                 else
                 {
+                    await this.userManager.AddToRoleAsync(user, "Customer");
                     return Ok(new { result.Succeeded });
                 }
             }

@@ -1,0 +1,50 @@
+﻿@page "/LogIn"
+
+@using BookStore.Website.Models
+@using BookStore.Website.Contracts
+
+@inject IAuthenticationRepository authRepository
+@inject NavigationManager navManager
+
+<div class="card">
+    <h3 class="card-title">Log In</h3>
+    @if (!this.response)
+    {
+        <div class="alert alert-danger">
+            <p>Something went wrong with the registration attempt.</p>
+        </div>
+    }
+    <div class="card-body">
+        <EditForm Model="this.LogInModel" OnValidSubmit="HandleLogIn">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary></ValidationSummary>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <InputText Id="email" class="form-control" @bind-Value="this.LogInModel.EmailAddress" />
+                <ValidationMessage For="@(() => this.LogInModel.EmailAddress)" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <InputText Id="password" type="password" class="form-control" @bind-Value="this.LogInModel.Password" />
+                <ValidationMessage For="@(() => this.LogInModel.Password)" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private UserLoginModel LogInModel = new UserLoginModel();
+
+    private bool response = true;
+
+    private async Task HandleLogIn()
+    {
+        this.response = await this.authRepository.Login(this.LogInModel);
+
+        if (this.response)
+        {
+            this.navManager.NavigateTo("/");
+        }
+    }
+}
