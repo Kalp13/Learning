@@ -1,0 +1,62 @@
+﻿@page "/authors"
+
+@inject IAuthorRepository authorRepo
+
+<h3>Authors Index</h3>
+
+@if (this.Model == null)
+{
+    <LoadingMessage Message="Loading Authors"></LoadingMessage>
+}
+
+@if (this.Model != null && this.Model.Count > 0)
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Biography</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model)
+            {
+                <tr>
+                    <td>@author.FirstName</td>
+                    <td>@author.LastName</td>
+                    <td>
+                        <a href="/authors/details/@author.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                            View
+                        </a>
+                        <a href="/authors/update/@author.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                            Edit
+                        </a>
+                        <a class="btn btn-danger">
+                            <span class="oi oi-delete"></span>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (this.Model != null && this.Model.Count == 0)
+{
+    <div class="alert alert-info">
+        No Authors available.
+    </div>
+}
+
+@code {
+    private IList<AuthorModel> Model;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.Model = await this.authorRepo.Get(Endpoints.AuthorsEndpoint);
+    }
+}

@@ -69,22 +69,29 @@ using BookStore.Website;
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using BookStore.Website.Shared;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\Login.razor"
+#line 11 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\Login.razor"
+#line 12 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Contracts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Static;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Shared;
 
 #line default
 #line hidden
@@ -98,7 +105,7 @@ using BookStore.Website.Contracts;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\Login.razor"
+#line 33 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\Login.razor"
        
     private UserLoginModel LogInModel = new UserLoginModel();
 

@@ -13,7 +13,7 @@ namespace BookStore.Website.Contracts
 
         Task<bool> Create(string url, T newEntity);
 
-        Task<bool> Update(string url, T updatedEntity);
+        Task<bool> Update(string url, T updatedEntity, int id);
 
         Task<bool> Delete(string url, int id);
     }

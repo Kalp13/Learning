@@ -1,11 +1,11 @@
-﻿using BookStore.Website.Contracts;
+﻿using Blazored.LocalStorage;
+using BookStore.Website.Contracts;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +15,12 @@ namespace BookStore.Website.Services
     {
         private readonly IHttpClientFactory clientFactory;
 
-        public BaseRepository(IHttpClientFactory factory)
+        private readonly ILocalStorageService localStorage;
+
+        public BaseRepository(IHttpClientFactory factory, ILocalStorageService localStorage)
         {
             this.clientFactory = factory;
+            this.localStorage = localStorage;
         }
 
         public async Task<bool> Create(string url, T newEntity)
@@ -32,6 +35,8 @@ namespace BookStore.Website.Services
             request.Content = new StringContent(JsonConvert.SerializeObject(newEntity));
 
             var client = this.clientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetBearerToken());
+
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (response.StatusCode == HttpStatusCode.Created)
@@ -53,6 +58,8 @@ namespace BookStore.Website.Services
                             string.Format(CultureInfo.InvariantCulture, "{0}/{1}",url, id));
 
             var client = this.clientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetBearerToken());
+
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (response.StatusCode == HttpStatusCode.NoContent)
@@ -69,6 +76,8 @@ namespace BookStore.Website.Services
                             string.Format(CultureInfo.InvariantCulture, "{0}/{1}", url, id));
 
             var client = this.clientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetBearerToken());
+
             HttpResponseMessage response = await client.SendAsync(request);
             
             if (response.StatusCode == HttpStatusCode.OK)
@@ -85,6 +94,8 @@ namespace BookStore.Website.Services
             var request = new HttpRequestMessage(HttpMethod.Get, url);
 
             var client = this.clientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetBearerToken());
+
             HttpResponseMessage response = await client.SendAsync(request);
 
             if (response.StatusCode == HttpStatusCode.OK)
@@ -93,13 +104,15 @@ namespace BookStore.Website.Services
                 return JsonConvert.DeserializeObject<IList<T>>(content);
             }
 
+
+
             return null;
         }
 
-        public async Task<bool> Update(string url, T updatedEntity)
+        public async Task<bool> Update(string url, T updatedEntity, int id)
         {
-            var request = new HttpRequestMessage(HttpMethod.Patch, 
-                                string.Format(CultureInfo.InvariantCulture, "{0}", url));
+            var request = new HttpRequestMessage(HttpMethod.Put, 
+                                string.Format(CultureInfo.InvariantCulture, "{0}/{1}", url, id));
 
             if (updatedEntity == null)
             {
@@ -111,14 +124,23 @@ namespace BookStore.Website.Services
                                                 "application/json");
 
             var client = this.clientFactory.CreateClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetBearerToken());
+
             HttpResponseMessage response = await client.SendAsync(request);
 
+            
             if (response.StatusCode == HttpStatusCode.NoContent)
             {
                 return true;
             }
 
             return false;
+        }
+
+        private async Task<string> GetBearerToken()
+        {
+            var savedToken = await this.localStorage.GetItemAsync<string>("authToken");
+            return savedToken;
         }
     }
 }

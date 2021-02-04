@@ -94,6 +94,7 @@ C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStor
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.runtimeconfig.dev.json
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.dll
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.pdb
+C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.xml
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -160,12 +161,11 @@ C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStor
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.csproj.CoreCompileInputs.cache
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.MvcApplicationPartsAssemblyInfo.cache
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.RazorTargetAssemblyInfo.cache
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.csproj.CopyComplete
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\BookStore.WebAPI.StaticWebAssets.Manifest.cache
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\staticwebassets\BookStore.WebAPI.StaticWebAssets.xml
+C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\BookStore.WebAPI.styles.css
+C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.RazorTargetAssemblyInfo.cache
+C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.csproj.CopyComplete
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.dll
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.pdb
 C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\BookStore.WebAPI.genruntimeconfig.cache
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\bin\Debug\netcoreapp3.1\BookStore.WebAPI.xml
-C:\VSTS\Learning\BookStore-API\BookStore.WebAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\BookStore.WebAPI.styles.css
