@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BookStore.Website.Shared
+namespace BookStore.Website.Pages.Authors
 {
     #line hidden
     using System;
@@ -96,13 +96,28 @@ using BookStore.Website.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/authors")]
+    public partial class AuthorsIndex : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 55 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorsIndex.razor"
+       
+    private IList<AuthorModel> Model;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.Model = await this.authorRepo.Get(Endpoints.AuthorsEndpoint);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthorRepository authorRepo { get; set; }
     }
 }
 #pragma warning restore 1591

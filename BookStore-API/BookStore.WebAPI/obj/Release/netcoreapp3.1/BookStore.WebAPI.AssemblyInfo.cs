@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-BookStore.WebAPI-DEEF7F60-2919-49AE-A175-D3401642AE29")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookStore.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
