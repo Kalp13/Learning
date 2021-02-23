@@ -66,6 +66,13 @@ using BookStore.Website;
 #line hidden
 #nullable disable
 #nullable restore
+#line 9 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 11 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Models;
 
@@ -82,13 +89,6 @@ using BookStore.Website.Contracts;
 #nullable restore
 #line 13 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Static;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using BookStore.Website.Shared;
 
 #line default
 #line hidden

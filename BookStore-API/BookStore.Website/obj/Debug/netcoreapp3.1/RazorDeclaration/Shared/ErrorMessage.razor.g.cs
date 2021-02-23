@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BookStore.Website.Pages.Users
+namespace BookStore.Website.Shared
 {
     #line hidden
     using System;
@@ -96,8 +96,7 @@ using BookStore.Website.Static;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Register")]
-    public partial class Register : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class ErrorMessage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,31 +104,14 @@ using BookStore.Website.Static;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\Register.razor"
+#line 5 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Shared\ErrorMessage.razor"
        
-    private UserRegistrationModel RegistrationModel = new UserRegistrationModel();
-
-    bool response = true;
-
-    private async Task HandleRegistration()
-    {
-        var response = await this.authRepository.Register(this.RegistrationModel);
-
-        if (response)
-        {
-            this.navManager.NavigateTo("/LogIn");
-        }
-        else
-        {
-            this.response = true;
-        }
-    }
+    [Parameter]
+    public string Message { get; set; }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationRepository authRepository { get; set; }
     }
 }
 #pragma warning restore 1591

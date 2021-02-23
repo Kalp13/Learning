@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BookStore.Website.Pages.Users
+namespace BookStore.Website.Pages.Authors
 {
     #line hidden
     using System;
@@ -96,8 +96,15 @@ using BookStore.Website.Static;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Register")]
-    public partial class Register : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 3 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorDelete.razor"
+           [Authorize(Roles="Administrator")]
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/authors/delete/{Id}")]
+    public partial class AuthorDelete : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -105,31 +112,43 @@ using BookStore.Website.Static;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\Register.razor"
+#line 69 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorDelete.razor"
        
-    private UserRegistrationModel RegistrationModel = new UserRegistrationModel();
+    [Parameter]
+    public string Id { get;  set; }
 
-    bool response = true;
+    private AuthorModel Model = new AuthorModel();
 
-    private async Task HandleRegistration()
+    private bool isFailed = false;
+
+    protected override async Task OnInitializedAsync()
     {
-        var response = await this.authRepository.Register(this.RegistrationModel);
+        int id = Convert.ToInt32(this.Id);
+        this.Model = await this.authorRepo.Get(Endpoints.AuthorsEndpoint, id);
+    }
 
-        if (response)
+    private async Task DeleteAuthor()
+    {
+        bool isSuccess = await this.authorRepo.Delete(Endpoints.AuthorsEndpoint, this.Model.Id);
+        if (isSuccess)
         {
-            this.navManager.NavigateTo("/LogIn");
+            this.navigationManager.NavigateTo("/authors");
         }
-        else
+        else 
         {
-            this.response = true;
+            this.isFailed = !isSuccess;
         }
+    }
+
+    private void BackToList(){
+        this.navigationManager.NavigateTo("/authors");
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthenticationRepository authRepository { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthorRepository authorRepo { get; set; }
     }
 }
 #pragma warning restore 1591

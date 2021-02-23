@@ -69,6 +69,13 @@ using BookStore.Website;
 #line hidden
 #nullable disable
 #nullable restore
+#line 9 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 11 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Models;
 
@@ -89,13 +96,6 @@ using BookStore.Website.Static;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using BookStore.Website.Shared;
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/authors")]
     public partial class AuthorsIndex : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,7 +105,7 @@ using BookStore.Website.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 55 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorsIndex.razor"
+#line 67 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorsIndex.razor"
        
     private IList<AuthorModel> Model;
 

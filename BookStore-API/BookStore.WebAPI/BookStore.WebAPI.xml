@@ -119,6 +119,7 @@
             <param name="signIn"></param>
             <param name="manager"></param>
             <param name="logger"></param>
+            <param name="config"></param>
         </member>
         <member name="M:BookStore.WebAPI.Controllers.UsersController.Register(BookStore.WebAPI.Models.UserDTO)">
             <summary>

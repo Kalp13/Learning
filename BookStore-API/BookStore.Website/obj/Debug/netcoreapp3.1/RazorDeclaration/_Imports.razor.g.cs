@@ -96,13 +96,6 @@ using BookStore.Website.Static;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using BookStore.Website.Shared;
-
-#line default
-#line hidden
-#nullable disable
     public partial class _Imports : System.Object
     {
         #pragma warning disable 1998

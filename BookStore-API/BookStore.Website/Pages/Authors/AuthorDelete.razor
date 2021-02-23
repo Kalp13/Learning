@@ -1,7 +1,13 @@
-﻿@page "/authors/details/{Id}"
+﻿@page "/authors/delete/{Id}"
 
+@attribute [Authorize(Roles="Administrator")]
 @inject IAuthorRepository authorRepo
 @inject NavigationManager navigationManager
+
+@if (this.isFailed)
+    {
+        <ErrorMessage Message="Something went wrong with the operation."/>
+    }
 
 @if (this.Model == null)
 {
@@ -9,7 +15,7 @@
 }
 else
 {
-    <h3 class="card-title">@Model.FirstName @Model.LastName Details</h3>
+    <h3 class="card-title">Are You Sure You Want To Delete This Record?</h3>
 
     <div class="col-md-4">
         <table class="table table-responsive">
@@ -50,6 +56,11 @@ else
     </div>
 }
 
+<button @onclick="DeleteAuthor" class="btn btn-danger">
+    <span class="oi oi-delete"></span>
+    Delete Author
+</button>
+
 <button @onclick="BackToList" class="btn btn-outline-secondary">
     <span class="oi oi-media-skip-backward"></span>
     Back To List
@@ -61,10 +72,25 @@ else
 
     private AuthorModel Model = new AuthorModel();
 
+    private bool isFailed = false;
+
     protected override async Task OnInitializedAsync()
     {
         int id = Convert.ToInt32(this.Id);
         this.Model = await this.authorRepo.Get(Endpoints.AuthorsEndpoint, id);
+    }
+
+    private async Task DeleteAuthor()
+    {
+        bool isSuccess = await this.authorRepo.Delete(Endpoints.AuthorsEndpoint, this.Model.Id);
+        if (isSuccess)
+        {
+            this.navigationManager.NavigateTo("/authors");
+        }
+        else 
+        {
+            this.isFailed = !isSuccess;
+        }
     }
 
     private void BackToList(){

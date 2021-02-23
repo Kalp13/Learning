@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-BookStore.WebAPI-DEEF7F60-2919-49AE-A175-D3401642AE29</UserSecretsId>
     <RootNamespace>BookStore.WebAPI</RootNamespace>
+    <StartupObject>BookStore.WebAPI.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

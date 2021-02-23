@@ -21,13 +21,6 @@ namespace BookStore.WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly SignInManager<IdentityUser> signInManager;
-
-        private readonly UserManager<IdentityUser> userManager;
-
-        private ILoggerService loggerService;
-
-        private IConfiguration configuration;
 
         #region Constructor
 
@@ -37,6 +30,7 @@ namespace BookStore.WebAPI.Controllers
         /// <param name="signIn"></param>
         /// <param name="manager"></param>
         /// <param name="logger"></param>
+        /// <param name="config"></param>
         public UsersController(SignInManager<IdentityUser> signIn, 
                                UserManager<IdentityUser> manager,
                                ILoggerService logger,
@@ -49,6 +43,8 @@ namespace BookStore.WebAPI.Controllers
         }
 
         #endregion
+
+        #region Service Calls
 
         /// <summary>
         /// Registers a new user with the given properties.
@@ -67,11 +63,11 @@ namespace BookStore.WebAPI.Controllers
                 this.loggerService.LogInfo($"{this.GetControllerActionNames()}: Login Attempt from user {userDTO.EmailAddress}");
 
                 string username = userDTO.EmailAddress;
-                 string password = userDTO.Password;
-                var user = new IdentityUser 
-                { 
-                    Email = username, 
-                    UserName = username 
+                string password = userDTO.Password;
+                var user = new IdentityUser
+                {
+                    Email = username,
+                    UserName = username
                 };
 
                 var result = await this.userManager.CreateAsync(user, password);
@@ -136,6 +132,8 @@ namespace BookStore.WebAPI.Controllers
             }
         }
 
+        #endregion
+
         #region Class Methods
 
         private string GetControllerActionNames()
@@ -184,6 +182,18 @@ namespace BookStore.WebAPI.Controllers
                 throw exc;
             }
         }
+
+        #endregion
+
+        #region Instance Fields
+
+        private readonly SignInManager<IdentityUser> signInManager;
+
+        private readonly UserManager<IdentityUser> userManager;
+
+        private ILoggerService loggerService;
+
+        private IConfiguration configuration;
 
         #endregion
     }

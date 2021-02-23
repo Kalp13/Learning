@@ -66,6 +66,13 @@ using BookStore.Website;
 #line hidden
 #nullable disable
 #nullable restore
+#line 9 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 11 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Models;
 
@@ -86,13 +93,6 @@ using BookStore.Website.Static;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using BookStore.Website.Shared;
-
-#line default
-#line hidden
-#nullable disable
     public partial class App : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -109,8 +109,9 @@ using BookStore.Website.Shared;
 #nullable disable
             ));
             __builder.AddAttribute(2, "Found", (Microsoft.AspNetCore.Components.RenderFragment<Microsoft.AspNetCore.Components.RouteData>)((routeData) => (__builder2) => {
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView>(3);
-                __builder2.AddAttribute(4, "RouteData", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.RouteData>(
+                __builder2.AddMarkupContent(3, "\r\n        ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Authorization.AuthorizeRouteView>(4);
+                __builder2.AddAttribute(5, "RouteData", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<Microsoft.AspNetCore.Components.RouteData>(
 #nullable restore
 #line 4 "C:\VSTS\Learning\BookStore-API\BookStore.Website\App.razor"
                                         routeData
@@ -119,7 +120,7 @@ using BookStore.Website.Shared;
 #line hidden
 #nullable disable
                 ));
-                __builder2.AddAttribute(5, "DefaultLayout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
+                __builder2.AddAttribute(6, "DefaultLayout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
 #nullable restore
 #line 4 "C:\VSTS\Learning\BookStore-API\BookStore.Website\App.razor"
                                                                    typeof(MainLayout)
@@ -129,13 +130,16 @@ using BookStore.Website.Shared;
 #nullable disable
                 ));
                 __builder2.CloseComponent();
+                __builder2.AddMarkupContent(7, "\r\n    ");
             }
             ));
-            __builder.AddAttribute(6, "NotFound", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
-                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>(7);
-                __builder2.AddAttribute(8, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
-                    __builder3.OpenComponent<Microsoft.AspNetCore.Components.LayoutView>(9);
-                    __builder3.AddAttribute(10, "Layout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
+            __builder.AddAttribute(8, "NotFound", (Microsoft.AspNetCore.Components.RenderFragment)((__builder2) => {
+                __builder2.AddMarkupContent(9, "\r\n        ");
+                __builder2.OpenComponent<Microsoft.AspNetCore.Components.Authorization.CascadingAuthenticationState>(10);
+                __builder2.AddAttribute(11, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder3) => {
+                    __builder3.AddMarkupContent(12, "\r\n            ");
+                    __builder3.OpenComponent<Microsoft.AspNetCore.Components.LayoutView>(13);
+                    __builder3.AddAttribute(14, "Layout", Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck<System.Type>(
 #nullable restore
 #line 8 "C:\VSTS\Learning\BookStore-API\BookStore.Website\App.razor"
                                  typeof(MainLayout)
@@ -144,14 +148,17 @@ using BookStore.Website.Shared;
 #line hidden
 #nullable disable
                     ));
-                    __builder3.AddAttribute(11, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
-                        __builder4.AddMarkupContent(12, "<p>Sorry, there\'s nothing at this address.</p>");
+                    __builder3.AddAttribute(15, "ChildContent", (Microsoft.AspNetCore.Components.RenderFragment)((__builder4) => {
+                        __builder4.AddMarkupContent(16, "\r\n                ");
+                        __builder4.AddMarkupContent(17, "<p>Sorry, there\'s nothing at this address.</p>\r\n            ");
                     }
                     ));
                     __builder3.CloseComponent();
+                    __builder3.AddMarkupContent(18, "\r\n        ");
                 }
                 ));
                 __builder2.CloseComponent();
+                __builder2.AddMarkupContent(19, "\r\n    ");
             }
             ));
             __builder.CloseComponent();
