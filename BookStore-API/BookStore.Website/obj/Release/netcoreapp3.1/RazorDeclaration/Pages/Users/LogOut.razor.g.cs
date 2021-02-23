@@ -13,78 +13,85 @@ namespace BookStore.Website.Pages.Users
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 1 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 2 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 3 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 4 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 5 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 6 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 7 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 8 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using BookStore.Website.Shared;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 3 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\Pages\Users\LogOut.razor"
+#line 11 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\Pages\Users\LogOut.razor"
+#line 12 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Contracts;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Static;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using BookStore.Website.Shared;
 
 #line default
 #line hidden
@@ -98,7 +105,7 @@ using BookStore.Website.Contracts;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\VSTS\Personal\Learning\BookStore-API\BookStore.Website\Pages\Users\LogOut.razor"
+#line 6 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Users\LogOut.razor"
       
     protected override async Task OnInitializedAsync()
     {

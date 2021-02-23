@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BookStore.Website.Shared
+namespace BookStore.Website.Pages.Authors
 {
     #line hidden
     using System;
@@ -96,13 +96,52 @@ using BookStore.Website.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class MainLayout : LayoutComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/authors/update/{Id}")]
+    public partial class AuthorUpdate : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 47 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorUpdate.razor"
+       
+    [Parameter]
+    public string Id { get;  set; }
+
+    private AuthorModel Model = new AuthorModel();
+
+    private bool isFailed = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        int id = Convert.ToInt32(this.Id);
+        this.Model = await this.authorRepo.Get(Endpoints.AuthorsEndpoint, id);
+    }
+
+    private async Task UpdateAuthor()
+    {
+        bool isSuccess = await this.authorRepo.Update(Endpoints.AuthorsEndpoint, Model, this.Model.Id);
+        if (isSuccess)
+        {
+            this.navigationManager.NavigateTo("/authors");
+        }
+        else 
+        {
+            this.isFailed = !isSuccess;
+        }
+    }
+
+    private void CancelUpdate(){
+        this.navigationManager.NavigateTo("/authors");
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthorRepository authorRepo { get; set; }
     }
 }
 #pragma warning restore 1591

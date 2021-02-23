@@ -10,15 +10,14 @@
         "projectUniqueName": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\BookStore.Website.csproj",
         "projectName": "BookStore.Website",
         "projectPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\BookStore.Website.csproj",
-        "packagesPath": "C:\\Users\\Rudolph\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\rfkal\\.nuget\\packages\\",
         "outputPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rudolph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rfkal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
