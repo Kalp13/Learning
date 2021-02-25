@@ -679,8 +679,9 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rfkal\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Rudolph\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -688,14 +689,15 @@
       "projectUniqueName": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\BookStore.Website.csproj",
       "projectName": "BookStore.Website",
       "projectPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\BookStore.Website.csproj",
-      "packagesPath": "C:\\Users\\rfkal\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Rudolph\\.nuget\\packages\\",
       "outputPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.Website\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\rfkal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rudolph\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

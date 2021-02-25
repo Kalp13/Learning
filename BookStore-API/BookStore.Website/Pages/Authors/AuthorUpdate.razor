@@ -1,5 +1,4 @@
 ﻿@page "/authors/update/{Id}"
-
 @attribute [Authorize(Roles="Administrator")]
 @inject IAuthorRepository authorRepo
 @inject NavigationManager navigationManager
@@ -16,7 +15,9 @@
 else
 {
     <h3 class="card-title">Update @Model.FirstName @Model.LastName Details</h3>
-
+    <br/>
+    <hr/>
+    <br/>
     <EditForm Model="Model" OnValidSubmit="UpdateAuthor">
         <DataAnnotationsValidator/>
         <ValidationSummary/>
