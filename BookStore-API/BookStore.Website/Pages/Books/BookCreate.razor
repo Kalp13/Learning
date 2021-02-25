@@ -1,0 +1,140 @@
+﻿@page "/books/create"
+@using System.IO
+@attribute [Authorize(Roles="Administrator")]
+
+@inject IBookRepository bookRepo
+@inject IAuthorRepository authorRepo
+@inject IFileUpload fileUpload
+@inject NavigationManager navigationManager
+
+<h3>Create Book</h3>
+<hr />
+<br />
+
+@if (this.isFailed)
+    {
+        <ErrorMessage Message="Something went wrong with the operation."/>
+    }
+
+@if (this.Model == null)
+{
+    <LoadingMessage Message="Loading Author Details"></LoadingMessage>
+}
+else
+{
+    <h3 class="card-title">Create New Author</h3>
+
+    <EditForm Model="Model" OnValidSubmit="CreateBook">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+        <div class="form-group">
+            <label for="title">Book Title</label>
+            <InputText @bind-Value="Model.Title" class="form-control" id="firstname"></InputText>
+        </div>
+        <div class="form-group">
+            <label for="isbn">ISBN</label>
+            <InputText @bind-Value="Model.Isbn" class="form-control" id="lastname"></InputText>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <InputNumber @bind-Value="Model.Price" class="form-control" id="biography"></InputNumber>
+        </div>
+        <div class="form-group">
+            <label for="author">Author</label>
+            <select @bind="Model.AuthorId" class="form-control" id="author">
+                <option value="">-- Select Author --</option>
+                @if (Authors != null)
+                {
+                    foreach (var author in Authors)
+                    {
+                        <option value="@author.Id">@author.FirstName @author.LastName</option>
+                    }
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="image">Book Cover Photo</label>
+            <InputFile OnChange="HandleFileSelection"/>
+            @if (isInvalidFileType)
+            {
+                <ErrorMessage Message="Invalid File Type"/>
+            }
+            @if (!String.IsNullOrWhiteSpace(imageDataUrl))
+            {
+                <img src="@imageDataUrl" style="height:100px; width:100px"/>
+            }
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+            <span class="oi oi-pencil"></span>
+            Create
+        </button>
+        <button @onclick="BackToList" class="btn btn-outline-secondary">
+            <span class="oi oi-media-skip-backward"></span>
+            Cancel
+        </button>
+    </EditForm>
+}
+
+@code {
+    private BookModel Model = new BookModel();
+    private IList<AuthorModel> Authors;
+    private bool isFailed = false;
+    private IFileListEntry file;
+    private string imageDataUrl;
+    private bool isInvalidFileType;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Authors = await authorRepo.Get(Endpoints.AuthorsEndpoint);
+    }
+
+    private async Task CreateBook()
+    {
+        if (!isInvalidFileType)
+        {
+            var extension = Path.GetExtension(file.Name);
+            var pictureId = Guid.NewGuid().ToString().Replace("-", "");
+            var pictureName = $"{pictureId}{extension}";
+            await fileUpload.UploadFile(file, pictureName).ConfigureAwait(false);
+            Model.Image = pictureName;
+            isFailed = !(await this.bookRepo.Create(Endpoints.BookssEndpoint, Model));
+            if (!isFailed)
+            {
+                BackToList();
+            }
+        }
+    }
+
+    private async Task HandleFileSelection(IFileListEntry[] files) 
+    {
+        file = files.FirstOrDefault();
+        if (file != null)
+        {
+            isInvalidFileType = !(file.Name.Contains(".jpg") || file.Name.Contains(".png") || file.Name.Contains(".jpeg"));
+            if (!isInvalidFileType)
+            {
+                using (var stream = new MemoryStream())
+                {
+                    await file.Data.CopyToAsync(stream);
+                    var reader = new StreamReader(file.Data);
+                    var imageBase64Data = Convert.ToBase64String(stream.ToArray());
+                    imageDataUrl = $"data:image/png;base64,{imageBase64Data}";
+                }
+            }
+            else
+            {
+                imageDataUrl = String.Empty;
+            }
+        }
+        else 
+        {
+            isInvalidFileType = false;
+        }
+    }
+
+    private void BackToList(){
+        this.navigationManager.NavigateTo("/authors");
+    }
+}

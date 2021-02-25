@@ -3,15 +3,19 @@
 @inject IAuthorRepository authorRepo
 @inject NavigationManager navigationManager
 
-@if (this.Model == null)
+<h3>View Author Details</h3>
+
+@if (int.Parse(Id) < 1 || string.IsNullOrWhiteSpace(Id))
+{
+    <ErrorMessage Message="Invalid Selection. Please Try Again"/>
+}
+else if (this.Model == null)
 {
     <LoadingMessage Message="Loading Author Details"></LoadingMessage>
 }
 else
 {
-    <h3 class="card-title">@Model.FirstName @Model.LastName Details</h3>
-
-    <div class="col-md-4">
+    <div class="col-md-6">
         <table class="table table-responsive">
             <tr>
                 <td>First Name</td>
