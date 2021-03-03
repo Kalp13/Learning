@@ -25,19 +25,22 @@ namespace BookStore.Website.Services
 
         public async Task<bool> Create(string url, T newEntity)
         {
-            var request = new HttpRequestMessage(HttpMethod.Post, url);
+            //var request = new HttpRequestMessage(HttpMethod.Post, url);
 
             if (newEntity == null)
             {
                 return false;
             }
 
-            request.Content = new StringContent(JsonConvert.SerializeObject(newEntity));
+            var serialized = JsonConvert.SerializeObject(newEntity);
+            var content = new StringContent(serialized);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var client = this.clientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", await GetBearerToken());
 
-            HttpResponseMessage response = await client.SendAsync(request);
+            var response = await client.PostAsync(url, content);
+            //HttpResponseMessage response = await client.SendAsync(request);
 
             if (response.StatusCode == HttpStatusCode.Created)
             {

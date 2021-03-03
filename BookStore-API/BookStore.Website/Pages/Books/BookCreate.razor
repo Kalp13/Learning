@@ -13,7 +13,7 @@
 
 @if (this.isFailed)
     {
-        <ErrorMessage Message="Something went wrong with the operation."/>
+        <ErrorMessage Message="Something went wrong with the operation."></ErrorMessage>
     }
 
 @if (this.Model == null)
@@ -54,7 +54,7 @@ else
         </div>
         <div class="form-group">
             <label for="image">Book Cover Photo</label>
-            <InputFile OnChange="HandleFileSelection"/>
+            <BlazorInputFile.InputFile OnChange="HandleFileSelection"/>
             @if (isInvalidFileType)
             {
                 <ErrorMessage Message="Invalid File Type"/>
@@ -94,11 +94,15 @@ else
     {
         if (!isInvalidFileType)
         {
-            var extension = Path.GetExtension(file.Name);
-            var pictureId = Guid.NewGuid().ToString().Replace("-", "");
-            var pictureName = $"{pictureId}{extension}";
-            await fileUpload.UploadFile(file, pictureName).ConfigureAwait(false);
-            Model.Image = pictureName;
+            if (file != null)
+            {
+                var extension = Path.GetExtension(file?.Name);
+                var pictureId = Guid.NewGuid().ToString().Replace("-", "");
+                var pictureName = $"{pictureId}{extension}";
+                await fileUpload.UploadFile(file, pictureName).ConfigureAwait(false);
+                Model.Image = pictureName;
+            }
+
             isFailed = !(await this.bookRepo.Create(Endpoints.BookssEndpoint, Model));
             if (!isFailed)
             {
@@ -112,6 +116,7 @@ else
         file = files.FirstOrDefault();
         if (file != null)
         {
+            var name = file.Name;
             isInvalidFileType = !(file.Name.Contains(".jpg") || file.Name.Contains(".png") || file.Name.Contains(".jpeg"));
             if (!isInvalidFileType)
             {
@@ -120,7 +125,7 @@ else
                     await file.Data.CopyToAsync(stream);
                     var reader = new StreamReader(file.Data);
                     var imageBase64Data = Convert.ToBase64String(stream.ToArray());
-                    imageDataUrl = $"data:image/png;base64,{imageBase64Data}";
+                    imageDataUrl = string.Format("data:image/png;base64,{0}", imageBase64Data);
                 }
             }
             else
@@ -133,6 +138,7 @@ else
             isInvalidFileType = false;
         }
     }
+
 
     private void BackToList(){
         this.navigationManager.NavigateTo("/authors");

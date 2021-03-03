@@ -57,6 +57,9 @@ namespace BookStore.WebAPI.Models
         [Required]
         public string Title { get; set; }
 
+        [Required]
+        public string Isbn { get; set; }
+
         public int? Year { get; set; }
 
         [StringLength(500)]

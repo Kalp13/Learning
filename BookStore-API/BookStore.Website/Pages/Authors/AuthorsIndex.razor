@@ -59,9 +59,7 @@
 }
 else if (this.Model != null && this.Model.Count == 0)
 {
-    <div class="alert alert-info">
-        No Authors available.
-    </div>
+    <LoadingMessage Message="No Authors available"></LoadingMessage>
 }
 
 @code {

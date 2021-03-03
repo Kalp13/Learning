@@ -15,22 +15,47 @@ namespace BookStore.Website.Services
 
         public FileUpload(IWebHostEnvironment env)
         {
-            this.environment = env;
+            environment = env;
         }
 
-        public async Task UploadFile(IFileListEntry file, string pictureName)
+        public void RemoveFile(string picName)
+        {
+            var path = $"{environment.WebRootPath}\\uploads\\{picName}";
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+        }
+
+        public async Task UploadFile(IFileListEntry file, string picName)
         {
             try
             {
-                using (var stream = new MemoryStream())
-                {
-                    await file.Data.CopyToAsync(stream).ConfigureAwait(false);
-                    var path = $"{environment.WebRootPath}\\uploads";
+                var ms = new MemoryStream();
+                await file.Data.CopyToAsync(ms);
 
-                    using (FileStream fileStream = new FileStream(path, FileMode.Create))
-                    {
-                        stream.WriteTo(fileStream);
-                    }
+                var path = $"{environment.WebRootPath}\\uploads\\{picName}";
+
+                using (FileStream fs = new FileStream(path, FileMode.Create))
+                {
+                    ms.WriteTo(fs);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void UploadFile(IFileListEntry file, MemoryStream msFile, string picName)
+        {
+            try
+            {
+                var path = $"{environment.WebRootPath}\\uploads\\{picName}";
+
+                using (FileStream fs = new FileStream(path, FileMode.Create))
+                {
+                    msFile.WriteTo(fs);
                 }
             }
             catch (Exception)
