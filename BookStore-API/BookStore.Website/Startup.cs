@@ -9,6 +9,7 @@ using Blazored.LocalStorage;
 using System.IdentityModel.Tokens.Jwt;
 using BookStore.Website.Providers;
 using Microsoft.AspNetCore.Components.Authorization;
+using Blazored.Toast;
 
 namespace BookStore.Website
 {
@@ -28,6 +29,7 @@ namespace BookStore.Website
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddBlazoredLocalStorage();
+            services.AddBlazoredToast();
             services.AddHttpClient();
             services.AddScoped<ApiAuthenticationStateProvider>();
             services.AddScoped<AuthenticationStateProvider>(p => p.GetRequiredService<ApiAuthenticationStateProvider>());

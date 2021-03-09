@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "i8oOO18cCHPRrWMl1vNhXc9i3vsNrRX/jE2QqqRKvXEwaCQYuFHQ1NrYOMUbfk4zvkZLlTkVyHNTJjv6ELsuuw==",
+  "dgSpecHash": "NDTYBkSQTGP/n9Uedrk1p1B2vQCygXJCWeC8BciI8Wg/Q93vZ3DHQcg9xolgkr4/Te11krJCAmQiohknWBVNDw==",
   "success": true,
   "projectFilePath": "C:\\VSTS\\Kalp13\\Learning\\BookStore-API\\BookStore.Website\\BookStore.Website.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rfkal\\.nuget\\packages\\blazored.localstorage\\3.0.0\\blazored.localstorage.3.0.0.nupkg.sha512",
+    "C:\\Users\\rfkal\\.nuget\\packages\\blazored.toast\\3.1.2\\blazored.toast.3.1.2.nupkg.sha512",
     "C:\\Users\\rfkal\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
     "C:\\Users\\rfkal\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.6\\microsoft.aspnetcore.authorization.3.1.6.nupkg.sha512",
     "C:\\Users\\rfkal\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.6\\microsoft.aspnetcore.components.3.1.6.nupkg.sha512",

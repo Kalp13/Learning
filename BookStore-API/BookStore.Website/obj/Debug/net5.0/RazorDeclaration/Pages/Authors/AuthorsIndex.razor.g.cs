@@ -103,6 +103,27 @@ using BlazorInputFile;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 15 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/authors")]
     public partial class AuthorsIndex : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +133,7 @@ using BlazorInputFile;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorsIndex.razor"
+#line 68 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorsIndex.razor"
        
     private IList<AuthorModel> Model;
 

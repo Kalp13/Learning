@@ -3,6 +3,7 @@
 @attribute [Authorize(Roles="Administrator")]
 @inject IAuthorRepository authorRepo
 @inject NavigationManager navigationManager
+@inject IToastService toastService
 
 @if (this.isFailed)
     {
@@ -53,6 +54,7 @@ else
         bool isSuccess = await this.authorRepo.Create(Endpoints.AuthorsEndpoint, Model);
         if (isSuccess)
         {
+            this.toastService.ShowSuccess($"Successfully created author {this.Model.FirstName} {this.Model.LastName}", "Successfully created author");
             BackToList();
         }
         else 

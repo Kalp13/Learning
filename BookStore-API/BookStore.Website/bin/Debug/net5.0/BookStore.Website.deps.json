@@ -9,7 +9,15 @@
       "DEBUG",
       "NET",
       "NET5_0",
-      "NETCOREAPP"
+      "NETCOREAPP",
+      "NET5_0_OR_GREATER",
+      "NETCOREAPP1_0_OR_GREATER",
+      "NETCOREAPP1_1_OR_GREATER",
+      "NETCOREAPP2_0_OR_GREATER",
+      "NETCOREAPP2_1_OR_GREATER",
+      "NETCOREAPP2_2_OR_GREATER",
+      "NETCOREAPP3_0_OR_GREATER",
+      "NETCOREAPP3_1_OR_GREATER"
     ],
     "languageVersion": "9.0",
     "platform": "",
@@ -27,6 +35,7 @@
         "dependencies": {
           "BlazorInputFile": "0.2.0",
           "Blazored.LocalStorage": "3.0.0",
+          "Blazored.Toast": "3.1.2",
           "Newtonsoft.Json": "12.0.3",
           "System.IdentityModel.Tokens.Jwt": "6.8.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
@@ -333,6 +342,22 @@
         },
         "compile": {
           "lib/netstandard2.1/Blazored.LocalStorage.dll": {}
+        }
+      },
+      "Blazored.Toast/3.1.2": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.6",
+          "Microsoft.AspNetCore.Components.Web": "3.1.6",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Blazored.Toast.dll": {
+            "assemblyVersion": "3.1.2.0",
+            "fileVersion": "3.1.2.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Blazored.Toast.dll": {}
         }
       },
       "BlazorInputFile/0.2.0": {
@@ -2175,6 +2200,13 @@
       "sha512": "sha512-eXpHDvog+nRvAFsrqVKqGrpHXuyPTH8tgAremHKbteP5nNEROlItfP8Xh8pNMpTovuQ4tl3NyfQcG0rnbjQ5jw==",
       "path": "blazored.localstorage/3.0.0",
       "hashPath": "blazored.localstorage.3.0.0.nupkg.sha512"
+    },
+    "Blazored.Toast/3.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EDwxOEeqcT8vNIqn+sCYv/Maouu223UfMCuBxtlUpqPsVHql6OmhZgpo3j9GssIkGU1utKKdi4NaAoUoXDKWSQ==",
+      "path": "blazored.toast/3.1.2",
+      "hashPath": "blazored.toast.3.1.2.nupkg.sha512"
     },
     "BlazorInputFile/0.2.0": {
       "type": "package",

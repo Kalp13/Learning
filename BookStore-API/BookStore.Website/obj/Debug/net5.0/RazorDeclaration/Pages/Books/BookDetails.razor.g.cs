@@ -103,6 +103,27 @@ using BlazorInputFile;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 15 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/books/details/{Id}")]
     public partial class BookDetails : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,10 +133,10 @@ using BlazorInputFile;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Books\BookDetails.razor"
+#line 77 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Books\BookDetails.razor"
        
     [Parameter]
-    public string Id { get;  set; }
+    public string Id { get; set; }
 
     private BookModel Model = new BookModel();
 
@@ -125,7 +146,8 @@ using BlazorInputFile;
         this.Model = await this.bookRepo.Get(Endpoints.BookssEndpoint, id);
     }
 
-    private void BackToList(){
+    private void BackToList()
+    {
         this.navigationManager.NavigateTo("/books");
     }
 

@@ -15,43 +15,55 @@ else if (this.Model == null)
 }
 else
 {
-    <div class="col-md-6">
-        <table class="table table-responsive">
-            <tr>
-                <td>First Name</td>
-                <td>@Model.FirstName</td>
-            </tr>
-            <tr>
-                <td>Last Name</td>
-                <td>@Model.LastName</td>
-            </tr>
-            <tr>
-                <td>Biography</td>
-                <td>@Model.Bio</td>
-            </tr>
-        </table>
+<div class="col-md-6">
+    <table class="table table-responsive">
+        <tr>
+            <td>First Name</td>
+            <td>@Model.FirstName</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>@Model.LastName</td>
+        </tr>
+        <tr>
+            <td>Biography</td>
+            <td>@Model.Bio</td>
+        </tr>
+    </table>
+    <br />
+    @if (Model.Books == null || Model.Books.Count < 1)
+    {
+        <div class="alert alert-dismissible alert-secondary">
+            No Books for @Model.FirstName @Model.LastName
+        </div>
+    }
+    else
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <h4>Books</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                @foreach (var book in @Model.Books)
+                {
+                    <li class="list-group-item">@book.Title - @book.Price <a href="/books/details/@book.Id">View</a></li>
+                }
+            </ul>
+        </div>
         <br />
-        @if (Model.Books == null || Model.Books.Count < 1)
-        {
-            <div class="alert alert-dismissible alert-secondary">
-                No Books for @Model.FirstName @Model.LastName
-            </div>
-        }
-        else 
-        {
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    <h4>Books</h4>
-                </div>
-                <ul class="list-group list-group-flush">
-                    @foreach (var book in @Model.Books)
-                    {
-                        <li class="list-group-item">@book.Title - @book.Price <a href="/books/details/@book.Id">View</a></li>
-                    }
-                </ul>
-            </div>
-        }
-    </div>
+        <AuthorizeView Roles="Administrator">
+            <a href="/authors/update/@Model.Id" class="btn btn-warning">
+                <span class="oi oi-pencil"></span>
+                Edit
+            </a>
+            <a href="/authors/delete/@Model.Id" class="btn btn-danger">
+                <span class="oi oi-delete"></span>
+                Delete
+            </a>
+        </AuthorizeView>
+        <br />
+    }
+</div>
 }
 
 <button @onclick="BackToList" class="btn btn-outline-secondary">

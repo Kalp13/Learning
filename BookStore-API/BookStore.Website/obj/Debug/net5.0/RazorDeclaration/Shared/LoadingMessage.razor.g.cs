@@ -103,6 +103,27 @@ using BlazorInputFile;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 15 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
     public partial class LoadingMessage : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
