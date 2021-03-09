@@ -105,7 +105,6 @@ C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\bin\Debug\net5.0\Microso
 C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\obj\Debug\net5.0\BookStore.Website.csprojAssemblyReference.cache
 C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\obj\Debug\net5.0\BookStore.Website.GeneratedMSBuildEditorConfig.editorconfig
 C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\obj\Debug\net5.0\BookStore.Website.AssemblyInfoInputs.cache
 C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\obj\Debug\net5.0\BookStore.Website.AssemblyInfo.cs

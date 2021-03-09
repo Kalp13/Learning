@@ -104,6 +104,27 @@ using BlazorInputFile;
 #line hidden
 #nullable disable
 #nullable restore
+#line 15 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using System.IO;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorCreate.razor"
            [Authorize(Roles="Administrator")]
 
@@ -119,7 +140,7 @@ using BlazorInputFile;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 46 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorCreate.razor"
+#line 47 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Authors\AuthorCreate.razor"
        
     private AuthorModel Model = new AuthorModel();
 
@@ -130,6 +151,7 @@ using BlazorInputFile;
         bool isSuccess = await this.authorRepo.Create(Endpoints.AuthorsEndpoint, Model);
         if (isSuccess)
         {
+            this.toastService.ShowSuccess($"Successfully created author {this.Model.FirstName} {this.Model.LastName}", "Successfully created author");
             BackToList();
         }
         else 
@@ -145,6 +167,7 @@ using BlazorInputFile;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IToastService toastService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager navigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IAuthorRepository authorRepo { get; set; }
     }

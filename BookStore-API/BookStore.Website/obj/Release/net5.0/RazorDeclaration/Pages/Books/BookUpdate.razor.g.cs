@@ -104,6 +104,20 @@ using BlazorInputFile;
 #line hidden
 #nullable disable
 #nullable restore
+#line 15 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Books\BookUpdate.razor"
 using System.IO;
 
