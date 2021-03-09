@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj": {}
+    "C:\\VSTS\\Kalp13\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj": {
+    "C:\\VSTS\\Kalp13\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj",
+        "projectUniqueName": "C:\\VSTS\\Kalp13\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj",
         "projectName": "BookStore.WebAPI",
-        "projectPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj",
-        "packagesPath": "C:\\Users\\Rudolph\\.nuget\\packages\\",
-        "outputPath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WebAPI\\obj\\",
+        "projectPath": "C:\\VSTS\\Kalp13\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\rfkal\\.nuget\\packages\\",
+        "outputPath": "C:\\VSTS\\Kalp13\\Learning\\BookStore-API\\BookStore.WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rudolph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rfkal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -116,7 +115,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
