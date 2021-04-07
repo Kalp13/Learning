@@ -13,119 +13,105 @@ namespace BookStore.Website.Pages.Books
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 1 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 2 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 3 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 4 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 5 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 6 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 7 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 8 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 9 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 11 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 12 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Contracts;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 13 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BookStore.Website.Static;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 14 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using BlazorInputFile;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using Blazored.Toast;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 16 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
-using Blazored.Toast.Services;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 17 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\_Imports.razor"
+#line 15 "C:\VSTS\Learning\BookStore-API\BookStore.Website\_Imports.razor"
 using System.IO;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Books\BooksIndex.razor"
+#line 2 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Books\BooksIndex.razor"
            [Authorize]
 
 #line default
@@ -140,7 +126,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 73 "C:\VSTS\Kalp13\Learning\BookStore-API\BookStore.Website\Pages\Books\BooksIndex.razor"
+#line 73 "C:\VSTS\Learning\BookStore-API\BookStore.Website\Pages\Books\BooksIndex.razor"
        
     private IList<BookModel> Model;
 
