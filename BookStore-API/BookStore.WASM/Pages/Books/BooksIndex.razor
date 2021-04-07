@@ -1,0 +1,80 @@
+﻿@page "/books/"
+@attribute [Authorize]
+
+@inject IBookRepository bookRepo
+
+<h3 class="card-title">Books Index</h3>
+<br />
+<hr />
+<br />
+
+@if (this.Model == null)
+{
+    <LoadingMessage Message="Loading Books..."></LoadingMessage>
+}
+
+<AuthorizeView Roles="Administrator">
+    <a href="books/create" class="btn btn-primary">
+        <span class="oi oi-plus"></span>
+        Create New Book
+    </a>
+</AuthorizeView>
+<br />
+<br />
+<br />
+
+@if (this.Model != null && this.Model.Count > 0)
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="uploads/@book.Image" style="height:50px;width:50px"/>
+                    </td>
+                    <td>@book.Title</td>
+                    <td>@book.Price</td>
+                    <td>@book.Author?.FirstName @book.Author?.LastName</td>
+                    <td>
+                        <a href="/books/details/@book.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                            View
+                        </a>
+                        <AuthorizeView Roles="Administrator">
+                            <a href="/books/update/@book.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                                Edit
+                            </a>
+                            <a href="/books/delete/@book.Id" class="btn btn-danger">
+                                <span class="oi oi-delete"></span>
+                                Delete
+                            </a>
+                        </AuthorizeView>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (this.Model != null && this.Model.Count == 0)
+{
+    <LoadingMessage Message="There are no books in the data store. Click 'Create Book' to begin."></LoadingMessage>
+}
+
+@code {
+    private IList<BookModel> Model;
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.Model = await this.bookRepo.Get(Endpoints.BookssEndpoint);
+    }
+}
