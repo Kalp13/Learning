@@ -90,6 +90,12 @@ namespace BookStore.WebAPI
                               UserManager<IdentityUser> userManager, 
                               RoleManager<IdentityRole> roleManager)
         {
+            using (var servicescope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = servicescope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                context.Database.EnsureCreated();
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

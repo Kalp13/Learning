@@ -14,7 +14,7 @@ else if (this.Model == null)
 {
     <LoadingMessage Message="Loading Author Details"></LoadingMessage>
 }
-else 
+else
 {
     <div class="col-6">
         <table class="table table-responsive">
@@ -25,11 +25,11 @@ else
             <tr>
                 <td><strong>Author</strong></td>
                 <td>
-                    @if (@Model.Author !=null)
+                    @if (@Model.Author != null)
                     {
-                        <a href="/authors/details/@Model.Author.Id">@Model.Author.FirstName @Model.Author.LastName</a> 
+                        <a href="/authors/details/@Model.Author.Id">@Model.Author.FirstName @Model.Author.LastName</a>
                     }
-                    else 
+                    else
                     {
                         <span class="text-muted">No Author Recorded</span>
                     }
@@ -51,9 +51,22 @@ else
         <br />
     </div>
     <div class="col-4">
-        <img src="uploads/@Model.Image" style="height:300px; width:300px"/>
+        <img src="uploads/@Model.Image" style="height:300px; width:300px" />
         <h3>@Model.Price?.ToString("C2")</h3>
     </div>
+    <br />
+
+    <AuthorizeView Roles="Administrator">
+        <a href="/books/update/@Model.Id" class="btn btn-warning">
+            <span class="oi oi-pencil"></span>
+            Edit
+        </a>
+        <a href="/books/delete/@Model.Id" class="btn btn-danger">
+            <span class="oi oi-delete"></span>
+            Delete
+        </a>
+    </AuthorizeView>
+    <br />
 }
 
 <button @onclick="BackToList" class="btn btn-outline-secondary">
@@ -63,7 +76,7 @@ else
 
 @code {
     [Parameter]
-    public string Id { get;  set; }
+    public string Id { get; set; }
 
     private BookModel Model = new BookModel();
 
@@ -73,7 +86,8 @@ else
         this.Model = await this.bookRepo.Get(Endpoints.BookssEndpoint, id);
     }
 
-    private void BackToList(){
+    private void BackToList()
+    {
         this.navigationManager.NavigateTo("/books");
     }
 }

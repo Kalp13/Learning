@@ -42,7 +42,7 @@
                         <img src="uploads/@book.Image" style="height:50px;width:50px"/>
                     </td>
                     <td>@book.Title</td>
-                    <td>@book.Price</td>
+                    <td>@book.Price?.ToString("C2")</td>
                     <td>@book.Author?.FirstName @book.Author?.LastName</td>
                     <td>
                         <a href="/books/details/@book.Id" class="btn btn-primary">
