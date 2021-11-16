@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = BookStore.WASM
+build_property.ProjectDir = C:\VSTS\Learning\BookStore-API\BookStore.WASM\

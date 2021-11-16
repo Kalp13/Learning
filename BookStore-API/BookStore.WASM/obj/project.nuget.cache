@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RtzPPPefpVF+5F8p75pQeGJW4W6G8HEC865BDHgjebKJm29/pD/t7jn6w5rlb1vRFWShMQSCZavWk75ma0qxhg==",
+  "dgSpecHash": "VBIspNx1MhIoWMcfxT4+kKhiyNKhEXMAOp0zksRPvsUNXHw6O40MaYwdLOaiT/vDnYhHL9vWkmpP+rC2LhCQ8A==",
   "success": true,
   "projectFilePath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WASM\\BookStore.WASM.csproj",
   "expectedPackageFiles": [

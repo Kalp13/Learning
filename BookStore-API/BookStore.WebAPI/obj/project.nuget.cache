@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7fZpopjxdlYyduLL/ie0c8o6nIUlVfDPVy1/Sa5ZSyL+E1C23WIk551VmvE6t2b9fcQrRIiImO+UDb3+m1zKww==",
+  "dgSpecHash": "MOu0ejRVWlL2K3OM3cAwCpiZSRDEo1wmeTynIOB/Ygi9xl6nsYu5ROyom1jK3eSWf0YugEXSinHLV36lDjvxfQ==",
   "success": true,
   "projectFilePath": "C:\\VSTS\\Learning\\BookStore-API\\BookStore.WebAPI\\BookStore.WebAPI.csproj",
   "expectedPackageFiles": [

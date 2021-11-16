@@ -94,24 +94,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:BookStore.WebAPI.Controllers.HomeController">
-            <summary>
-            This is a test API controller.
-            </summary>
-        </member>
-        <member name="M:BookStore.WebAPI.Controllers.HomeController.Get">
-            <summary>
-            Gets all the available <see cref="T:System.String"/> values.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:BookStore.WebAPI.Controllers.HomeController.Get(System.Int32)">
-            <summary>
-            Gets a specific <see cref="T:System.String"/> value.
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
         <member name="M:BookStore.WebAPI.Controllers.UsersController.#ctor(Microsoft.AspNetCore.Identity.SignInManager{Microsoft.AspNetCore.Identity.IdentityUser},Microsoft.AspNetCore.Identity.UserManager{Microsoft.AspNetCore.Identity.IdentityUser},BookStore.WebAPI.Contracts.ILoggerService,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
             Instantiates a new default instance of the <see cref="T:BookStore.WebAPI.Controllers.UsersController"/>
@@ -136,6 +118,24 @@
             </summary>
             <param name="userDTO">
             </param>
+            <returns></returns>
+        </member>
+        <member name="T:BookStore.WebAPI.Controllers.HomeController">
+            <summary>
+            This is a test API controller.
+            </summary>
+        </member>
+        <member name="M:BookStore.WebAPI.Controllers.HomeController.Get">
+            <summary>
+            Gets all the available <see cref="T:System.String"/> values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore.WebAPI.Controllers.HomeController.Get(System.Int32)">
+            <summary>
+            Gets a specific <see cref="T:System.String"/> value.
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
     </members>
